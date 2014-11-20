@@ -1,0 +1,11 @@
+#sidebar, #main {
+  float: left;
+}
+
+#sidebar {
+  width: 30%;
+}
+
+#main {
+  width: 70%;
+}

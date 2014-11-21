@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require news_reader
+//= require jquery.serializejson.min
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

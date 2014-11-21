@@ -9,3 +9,8 @@
 #main {
   width: 70%;
 }
+.editing {
+  width: 350px;
+  font-size: 1.17em;
+  font-weight: bold;
+}

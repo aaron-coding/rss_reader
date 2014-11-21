@@ -2,7 +2,21 @@
 
 <ul>
   <% feeds.forEach( function(feed) { %>
-  <li><a href="#api/feeds/<%= feed.id %>"> <%= feed.escape('title') %> </a></li>
+  <li>
+    <a href="#api/feeds/<%= feed.id %>"> <%= feed.escape('title') %></a>
+    <button class="delete-feed" data-id="<%= feed.id %>">X</button>
+  </li>
   <% }); %>
 </ul>
 
+<% if (errors) { %>
+  <%= errors['error'] %>
+<% } %>
+
+<h3>Add a feed</h3>
+
+<form id="new-feed">
+  <label for="feed-url">Feed Link</label>
+  <input type="text" id="feed-url" name="feed[url]">
+  <input type="submit" value="Make feed">
+</form>

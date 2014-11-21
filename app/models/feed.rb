@@ -8,12 +8,13 @@ class Feed < ActiveRecord::Base
     return feed if feed
 
     begin
+      return nil unless url.starts_with?("http")
       feed_data = SimpleRSS.parse(open(url))
       feed = Feed.create!(title: feed_data.title, url: url)
       feed_data.entries.each do |entry_data|
         Entry.create_from_json!(entry_data, feed)
       end
-    rescue SimpleRSSError
+    rescue 
       return nil
     end
 
